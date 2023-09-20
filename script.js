@@ -33,8 +33,6 @@ const emoji_array=[];
 emoji_array.length=25;
 emoji_array_length=emoji_array.length;
 
-
-// load functions on page load
 document.addEventListener("DOMContentLoaded", function() {
     hideMoneyRain();
     hideWinImage();
@@ -46,8 +44,17 @@ document.addEventListener("DOMContentLoaded", function() {
     numInputsEventListeners();
     numInput_amountChecker();
     backgroundVidSpeed();
+    checkScreenWidth();
+    window.addEventListener("resize", checkScreenWidth);
 });
 
+function checkScreenWidth() {
+    if (window.innerWidth < 900) {
+      alert("Get a PC or Laptop!");
+    }
+}
+
+// If something is entered into the number input, it will stop the autoplay.
 function numInputsEventListeners(){
     Array.from(all_num_input).forEach(function(input) {
         input.addEventListener("input", function() {
@@ -166,7 +173,7 @@ function generateRandomNumber(){
 function winChecker(){
     hideMoneyRain();
     hideWinImage();
-    for (let i = 0; i < lis_length; i++) {                  // green background after win is cleared
+    for (let i = 0; i < lis_length; i++) {
         lis[i].style.backgroundColor = "transparent";
     }
     let win=false;
@@ -244,8 +251,5 @@ play_btn.addEventListener("click",()=>{
     test_on=false;
     playGame();
 });
-
-// 128553 sad emoji
-// 129297 money emoji
 
 

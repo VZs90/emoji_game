@@ -145,9 +145,9 @@ li{
   
 #play_btn:hover {
     background-position: 115px;
-} */
+}
 
-/* #play_btn{
+#play_btn{
     box-sizing: border-box !important;
     position: relative;
     width:30%;
@@ -326,7 +326,7 @@ li{
 #video_container {
     position: absolute;
     width: 100%;
-    height: 100%; /* A teljes viewport magassága */
+    height: 100%;
     overflow: hidden;
     z-index: -20;
 }
@@ -338,6 +338,12 @@ video {
     width: 100%;
     height: 100%;
     opacity: 0.2;
-    object-fit: cover; /* A videó méretének automatikus méretezése a tartalomhoz */
+    object-fit: cover;
     z-index: -20;
 }
+
+@media screen and (max-width: 900px) {
+    body {
+      background-color: red;
+    }
+  }
